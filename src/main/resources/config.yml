@@ -1,0 +1,94 @@
+# ============================================
+#   BubbleChat - Folia Compatible Config
+# ============================================
+
+# Proximity chat settings
+proximity:
+  enabled: true
+  # Distance in blocks players must be within to see the bubble
+  range: 20.0
+  # Cancel the original chat message so it only shows as a bubble.
+  # Players with bubblechat.bypass.cancel will still see it in chat.
+  cancel-original-chat: false
+
+# Per-world overrides
+# Worlds listed here override global settings.
+# Set enabled: false to disable bubbles in specific worlds.
+# Example:
+#   worlds:
+#     creative:
+#       enabled: false
+#     minigames:
+#       proximity:
+#         enabled: false
+#         cancel-original-chat: false
+worlds: {}
+
+# Per-world permission gating
+# If true, players need bubblechat.world.<worldname> to use bubbles in that world.
+per-world-permissions: false
+
+# Bubble display settings
+bubble:
+  # How long the bubble text stays visible (in ticks, 20 ticks = 1 second)
+  duration: 80
+  # Maximum characters per line before wrapping
+  max-line-length: 30
+  # Maximum number of lines to display
+  max-lines: 3
+  # Format of the bubble text (supports PlaceholderAPI)
+  # Available placeholders: %player_name%, %message%
+  format: "&f%message%"
+  # Show player name above the message
+  show-name: true
+  name-format: "&e&l%player_name%"
+  # Background color (hex or 'transparent')
+  background: "transparent"
+
+# Text Display Entity settings (requires 1.19.4+)
+text-display:
+  # Height above player head
+  height-offset: 0.35
+  # Billboard mode: CENTER, FIXED, HORIZONTAL, VERTICAL
+  billboard: "CENTER"
+  # View range in blocks
+  view-range: 32.0
+  # Scale of the text
+  scale: 1.0
+  # Shadow on text
+  shadow: true
+  # Text alignment: LEFT, CENTER, RIGHT
+  alignment: "CENTER"
+  # Opacity (0-255, 255 = fully opaque)
+  opacity: 220
+  # Background color ARGB (0 = transparent)
+  background-color: 0x40000000
+
+# Animation settings
+animation:
+  # Animate bubble appearance
+  fade-in: true
+  fade-out: true
+  # Fade duration in ticks
+  fade-in-ticks: 5
+  fade-out-ticks: 10
+  follow-interpolation-ticks: 3
+  bubble-stack-size: 3       # จำนวน bubble สูงสุดที่แสดงพร้อมกัน
+  bubble-stack-spacing: 0.4  # ระยะ Y ระหว่างแต่ละ bubble (blocks)
+
+# Chat filter (replace bad words)
+filter:
+  enabled: false
+  replacement: "***"
+  words: []
+
+# Messages
+messages:
+  prefix: "&8[&aBubbleChat&8] "
+  reload: "&aConfiguration reloaded!"
+  toggled-on: "&aChat bubbles enabled!"
+  toggled-off: "&cChat bubbles disabled!"
+  no-permission: "&cYou don't have permission to do that!"
+
+# Debug mode
+debug: false

@@ -1,0 +1,47 @@
+name: BubbleChat
+version: '${version}'
+main: dev.bubblechat.BubbleChatPlugin
+api-version: '1.21'
+folia-supported: true
+description: Folia-compatible bubble chat plugin with proximity, packet-based display text above player heads
+
+authors: [YourName]
+
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  bubblechat:
+    description: BubbleChat main command
+    aliases: [bc]
+    usage: /bubblechat <reload|toggle|info>
+    permission: bubblechat.admin
+
+permissions:
+  bubblechat.admin:
+    description: Access to BubbleChat admin commands (reload, info)
+    default: op
+
+  bubblechat.use:
+    description: Allow player's chat to appear as bubbles
+    default: true
+
+  bubblechat.toggle:
+    description: Allow player to toggle their own bubbles on/off
+    default: true
+
+  bubblechat.bypass.proximity:
+    description: Bypass proximity range — message visible to everyone in the world
+    default: op
+
+  bubblechat.bypass.filter:
+    description: Bypass bad-word chat filter
+    default: op
+
+  bubblechat.bypass.cancel:
+    description: Bypass cancel-original-chat — message still shows in chat box even when cancelled
+    default: op
+
+  bubblechat.world.<worldname>:
+    description: Per-world permission (e.g. bubblechat.world.survival). If per-world perms are enabled, player needs this to use bubbles in that world.
+    default: true
