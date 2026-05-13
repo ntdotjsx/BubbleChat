@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.bubblechat"
-version = "1.0.0"
+version = "1.0.1"
 description = "Folia-compatible bubble chat plugin for Minecraft 1.21"
 
 java {
